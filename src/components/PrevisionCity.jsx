@@ -37,16 +37,13 @@ const PrevisionCity = (props) => {
   }, [props]);
 
   return (
-    <div className="bg-warning-subtle">
-      <Container className="d-flex justify-content-center">
+    <div className=" ">
+      <Container className="d-flex justify-content-center ms-2 pe-4 mt-2">
         <Row>
           <Col>
-            <h4 className="text-center mt-5 mb-5 text-primary bg-info-subtle ">
-              Your Meteo App
-            </h4>
             <Card
-              style={{ width: "65rem", height: "37rem" }}
-              className="border border-2 border-primary"
+              style={{ width: "55rem", height: "32rem" }}
+              className=" mt-2 mb-3 bg-primary-subtle"
             >
               <Card.Img
                 variant="fluid"
@@ -56,7 +53,27 @@ const PrevisionCity = (props) => {
                 className="ms-3"
               />
               <Card.Body>
-                <h3>{meteoMilan.name}</h3>
+                <h3 className="fw-bold text-primary">{meteoMilan.name}</h3>
+                <p>{okay && meteoMilan.weather[0].description}</p>
+
+                <p>
+                  <i class="bi bi-thermometer"></i> temp:{" "}
+                  {okay && meteoMilan.main.temp}°C
+                </p>
+                <p>
+                  <i class="bi bi-thermometer-high text-danger"></i> Temp max:{" "}
+                  {okay && meteoMilan.main.temp_max}°C
+                </p>
+                <p>
+                  <i class="bi bi-thermometer-low text-primary"></i> Temp min:{" "}
+                  {okay && meteoMilan.main.temp_min}°C
+                </p>
+                <p className="">
+                  <i class="bi bi-cloud-fog2-fill me-2 text-warning"></i>Speed:
+                  {okay && meteoMilan.wind.speed} Km/h
+                </p>
+                <p>{okay && meteoMilan.sys.country}</p>
+
                 {okay && (
                   <img
                     src={`http://openweathermap.org/img/w/${meteoMilan.weather[0].icon}.png`}
