@@ -35,8 +35,8 @@ const NavbarMeteo = () => {
           <i class="bi bi-brightness-high me-3 "></i>
           <i class="bi bi-snow3 me-3 "></i>
           <i class="bi bi-cloud-snow me-3 "></i>
-          <i class="bi bi-moon "></i>
-          <i class="bi bi-cloudy-fill"></i>
+          <i class="bi bi-moon me-3 "></i>
+          <i class="bi bi-cloudy-fill me-2"></i>
         </Nav>
       </Container>
     </Navbar>
