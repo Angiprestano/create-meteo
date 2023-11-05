@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
-import { currentDate, format } from "date-fns";
-import { Memory } from "react-bootstrap-icons";
 
 const apiKey = "bab430f8782bfe5c0e5ba94872cf0d82";
 
@@ -51,15 +49,15 @@ const PrevisionCity = (props) => {
         <Row>
           <Col className="">
             <Card
-              style={{ width: "36rem", height: "32rem" }}
-              className="mt-5 mb-3 me-1 bg-primary-subtle"
+              style={{ width: "40rem", height: "32rem" }}
+              className="mt-5 mb-3 me-1 bg-success-subtle"
             >
               <Card.Img
                 variant="fluid"
                 src="https://www.cosenzapost.it/wp-content/uploads/2015/12/meteo.png"
                 width={"180px"}
                 height={"140px"}
-                className="ms-4"
+                className="ms-5 border-1 border border-warning"
               />
               <Card.Body className="ms-2">
                 <h3 className="fw-bold text-primary fs-3 mb-2">
