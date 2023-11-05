@@ -1,10 +1,4 @@
-import {
-  Navbar,
-  Container,
-  Nav,
-  Dropdown,
-  DropdownButton,
-} from "react-bootstrap";
+import { Navbar, Container, Nav } from "react-bootstrap";
 
 const NavbarMeteo = () => {
   return (
@@ -12,11 +6,11 @@ const NavbarMeteo = () => {
       <Container>
         <Nav className="me-auto me-5">
           <img
-            src="https://www.linkoristano.it/photogallery_new/images/2014/08/il-meteo-it-44460.jpg"
+            src="https://png.pngtree.com/png-clipart/20221106/ourlarge/pngtree-weather-icon-clouds-and-sun-png-image_6419305.png"
             alt=""
-            width={"110px"}
+            width={"70px"}
             height={"62px"}
-            className="rounded-3"
+            className="rounded-4"
           />
 
           <Nav.Link href="#features" className="text-white mt-2 ms-5 fw-bold ">
@@ -31,12 +25,12 @@ const NavbarMeteo = () => {
         </Nav>
 
         <Nav className="fs-4 text-white">
-          <i class="bi bi-cloud-lightning-fill me-3 mt-1"></i>
-          <i class="bi bi-brightness-high me-3 "></i>
-          <i class="bi bi-snow3 me-3 "></i>
-          <i class="bi bi-cloud-snow me-3 "></i>
-          <i class="bi bi-moon me-3 "></i>
-          <i class="bi bi-cloudy-fill me-2"></i>
+          <i className="bi bi-cloud-lightning-fill me-3 mt-1"></i>
+          <i className="bi bi-brightness-high me-3 "></i>
+          <i className="bi bi-snow3 me-3 "></i>
+          <i className="bi bi-cloud-snow me-3 "></i>
+          <i className="bi bi-moon me-3 "></i>
+          <i className="bi bi-cloudy-fill me-2"></i>
         </Nav>
       </Container>
     </Navbar>

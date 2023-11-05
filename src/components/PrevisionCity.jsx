@@ -1,16 +1,25 @@
 import { useEffect, useState } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
+import { currentDate, format } from "date-fns";
+import { Memory } from "react-bootstrap-icons";
 
-const lat = 45.46;
-const long = 9.18;
 const apiKey = "bab430f8782bfe5c0e5ba94872cf0d82";
 
 const PrevisionCity = (props) => {
   const [meteoMilan, setMeteoMilan] = useState({});
-  const [meteo, setMeteo] = useState(false);
+  const [meteoAp, setMeteoAp] = useState(false);
   const lat = props.lat;
   const long = props.long;
   const [okay, setOkay] = useState(false);
+  const currentDate = new Date();
+
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  };
+  console.log(currentDate.toLocaleString("it-IT", options));
 
   const getMeteo = async () => {
     try {
@@ -37,47 +46,51 @@ const PrevisionCity = (props) => {
   }, [props]);
 
   return (
-    <div className=" ">
-      <Container className="d-flex justify-content-center ms-2 pe-4 mt-2">
+    <div className="d-flex col-12 ">
+      <Container className="d-flex justify-content-center ms-1 pe-4 mt-2">
         <Row>
-          <Col>
+          <Col className="">
             <Card
-              style={{ width: "55rem", height: "32rem" }}
-              className=" mt-2 mb-3 bg-primary-subtle"
+              style={{ width: "36rem", height: "32rem" }}
+              className="mt-5 mb-3 me-1 bg-primary-subtle"
             >
               <Card.Img
                 variant="fluid"
                 src="https://www.cosenzapost.it/wp-content/uploads/2015/12/meteo.png"
                 width={"180px"}
                 height={"140px"}
-                className="ms-3"
+                className="ms-4"
               />
-              <Card.Body>
-                <h3 className="fw-bold text-primary">{meteoMilan.name}</h3>
+              <Card.Body className="ms-2">
+                <h3 className="fw-bold text-primary fs-3 mb-2">
+                  {meteoMilan.name}
+                </h3>
                 <p>{okay && meteoMilan.weather[0].description}</p>
-
+                <p>{currentDate.toUTCString()}</p>
                 <p>
-                  <i class="bi bi-thermometer"></i> temp:{" "}
+                  <i class="bi bi-thermometer "></i> temp:{" "}
                   {okay && meteoMilan.main.temp}°C
                 </p>
                 <p>
-                  <i class="bi bi-thermometer-high text-danger"></i> Temp max:{" "}
+                  <i class="bi bi-thermometer-high text-danger "></i> Temp max:{" "}
                   {okay && meteoMilan.main.temp_max}°C
                 </p>
                 <p>
                   <i class="bi bi-thermometer-low text-primary"></i> Temp min:{" "}
                   {okay && meteoMilan.main.temp_min}°C
                 </p>
-                <p className="">
-                  <i class="bi bi-cloud-fog2-fill me-2 text-warning"></i>Speed:
-                  {okay && meteoMilan.wind.speed} Km/h
+                <p className="mb-2">
+                  <i class="bi bi-cloud-fog2-fill me-2 text-warning"></i>
+                  Speed:
+                  {okay && meteoMilan.wind.speed} nodi
                 </p>
-                <p>{okay && meteoMilan.sys.country}</p>
+                <p className="mb-2">{okay && meteoMilan.sys.country}</p>
 
                 {okay && (
                   <img
                     src={`http://openweathermap.org/img/w/${meteoMilan.weather[0].icon}.png`}
                     alt="city"
+                    className="mb-1"
                   ></img>
                 )}
 
