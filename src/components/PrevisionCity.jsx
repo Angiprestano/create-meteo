@@ -50,14 +50,14 @@ const PrevisionCity = (props) => {
           <Col className="">
             <Card
               style={{ width: "40rem", height: "32rem" }}
-              className="mt-5 mb-3 me-1 bg-success-subtle"
+              className="mt-5 mb-3 me-1 bg-success-subtle rounded-3 border-3 border-info"
             >
               <Card.Img
                 variant="fluid"
                 src="https://www.cosenzapost.it/wp-content/uploads/2015/12/meteo.png"
                 width={"180px"}
                 height={"140px"}
-                className="ms-5 border-1 border border-warning"
+                className="ms-5 border-1 border"
               />
               <Card.Body className="ms-2">
                 <h3 className="fw-bold text-primary fs-3 mb-2">
