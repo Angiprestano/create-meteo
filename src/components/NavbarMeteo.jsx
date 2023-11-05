@@ -2,7 +2,7 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 
 const NavbarMeteo = () => {
   return (
-    <Navbar className="bg-primary">
+    <Navbar className="bg-primary-subtle">
       <Container>
         <Nav className="me-auto me-5">
           <img
@@ -13,18 +13,18 @@ const NavbarMeteo = () => {
             className="rounded-4"
           />
 
-          <Nav.Link href="#features" className="text-white mt-2 ms-5 fw-bold ">
+          <Nav.Link href="#features" className=" mt-2 ms-5 fw-bold ">
             Città
           </Nav.Link>
-          <Nav.Link href="#pricing" className="text-white mt-2 ms-3 fw-bold">
+          <Nav.Link href="#pricing" className=" mt-2 ms-3 fw-bold">
             Previsioni
           </Nav.Link>
-          <Nav.Link href="#pricing" className="text-white mt-2 ms-3 fw-bold">
+          <Nav.Link href="#pricing" className=" mt-2 ms-3 fw-bold">
             Altre informazioni
           </Nav.Link>
         </Nav>
 
-        <Nav className="fs-4 text-white">
+        <Nav className="fs-4 text-secondary ">
           <i className="bi bi-cloud-lightning-fill me-3 mt-1"></i>
           <i className="bi bi-brightness-high me-3 "></i>
           <i className="bi bi-snow3 me-3 "></i>
